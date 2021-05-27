@@ -1,12 +1,72 @@
+<!--
+
+    HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+
+    HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，点击链接就可以跳转到其他网页，从而构成了整个互联网。
+
+    1999年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014年，HTML 5 发布，这是目前正在使用的版本。
+
+    浏览器的网页开发，涉及三种技术：HTML、CSS 和 JavaScript。HTML 语言定义网页的结构和内容，CSS 样式表定义网页的样式，JavaScript 语言定义网页与用户的互动行为。HTML 语言是网页开发的基础，CSS 和 JavaScript 都是基于 HTML 才能生效，即使没有这两者，HTML 本身也能使用，可以完成基本的内容展示。本教程只介绍 HTML 语言。
+ -->
+
+ <!--
+    元素
+        浏览器渲染网页时，会把 HTML 源码解析成一个标签树，每个标签都是树的一个节点（node）。这种节点就称为网页元素（element）。所以，“标签”和“元素”基本上是同义词，只是使用的场合不一样：标签是从源码角度来看，元素是从编程角度来看，比如<p>标签对应网页的p元素
+  -->
+
+  <!--
+      属性
+        属性（attribute）是标签的额外信息，使用空格与标签名和其他属性分隔。
+   -->
+
+<!--
+    <!doctype>，声明文档类型，告诉浏览器如何解析网页
+ -->
 <!DOCTYPE html>
+<!--
+    <html>标签是网页的顶层容器，即标签树结构的顶层节点，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个<html>标签。
+    lang属性表示网页默认的语言
+        en/英文
+        zh-CN中文
+ -->
 <html lang="en">
+<!--
+    <head>标签是一个容器标签，放置网页的元信息
+    <meta>:设置网页元数据
+    <link>:连接外部样式表
+    <title>:设置网页标题
+    <style>:放置内嵌的样式表
+    <script>:引入脚本
+    <noscript>:浏览器不支持脚本时,所要显示的内容
+    <base>:设置网页内部相对URL的计算基准
+ -->
 <head>
+    <!-- 声明编码方式 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Application Name">
+    <meta name="generator" content="program">
+    <meta name="subject" content="your document's subject">
+    <meta name="referrer" content="no-referrer">
+    <!-- <meta>标签的http-equiv属性用来覆盖 HTTP 回应的头信息字段，content属性是对应的字段内容。这两个属性与 HTTP 协议相关，属于高级用法，这里就不详细介绍了。 -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 可以覆盖 HTTP 回应的Content-Security-Policy字段 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <!-- 可以覆盖 HTTP 回应的Content-Type字段 -->
+    <meta http-equiv="Content-Type" content="Type=text/html; charset=utf-8">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="30;URL='http://website.com'">
+    <!-- 网页内容描述 -->
+    <meta name="description" content="HTML 语言入门">
+    <!-- 网页内容关键字 -->
+    <meta name="keywords" content="HTML,教程">
+    <!-- 网页作者 -->
+    <meta name="author" content="张三">
+    <!-- 网页标题 -->
     <title>Document</title>
 </head>
 <body>
-    test
+    <!-- 标签 -->
+    <div>test哈哈</div>
 </body>
 </html>
