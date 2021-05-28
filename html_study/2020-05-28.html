@@ -1,0 +1,135 @@
+<!--
+    网页元素的属性（attribute）可以定制元素的行为，不同的属性会导致元素有不同的行为。元素属性的写法是 HTML 标签内部的“键值对”
+ -->
+<!DOCTYPE html>
+<!--
+    属性名：lang 不区分大小写 LANG
+    属性值：en
+    属性名和属性值用=号连接
+        属性值
+            string
+            boolean
+            object
+            array
+            number
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        全局属性
+            id
+                唯一性 不可重复
+                可用于锚点定位
+                属性值不可以包含空格
+     -->
+    <p id="app">
+        test
+    </p>
+
+    <!--
+        class属性用于对网页元素进行分类
+            名称可以重复，可用存在多个
+            多个类名用空格分开
+     -->
+    <p class="app app1 app2">
+        text
+    </p>
+
+    <!--
+        title属性用来为元素添加附加说明。大多数浏览器中，鼠标悬浮在元素上面时，会将title属性值作为浮动提示，显示出来。
+     -->
+    <div title="说明啊">
+        说明
+    </div>
+
+    <!--
+        按住tab键元素可以获取焦点
+     -->
+    <p tabindex="0">这段文字可以获得焦点。</p>
+    <p tabindex="1">这段文字可以获得焦点2。</p>
+
+    <!--
+        accesskey属性指定网页元素获得焦点的快捷键，该属性的值必须是单个的可打印字符。只要按下快捷键，该元素就会得到焦点。
+        比如，Chrome 浏览器在 Windows 系统和 Linux 系统的快捷键是Alt + 字符键，在 Mac 系统的快捷键是Ctrl + Alt + 字符键。
+     -->
+     <p accesskey="n">按a键 哈哈</p>
+
+    <!-- style属性用来指定当前元素的 CSS 样式 -->
+     <p style="color: red">11</p>
+
+    <!-- hidden是一个布尔属性，表示当前的网页元素不再跟页面相关，因此浏览器不会渲染这个元素，所以就不会在网页中看到它 -->
+     <p hidden>本句不会显示在页面上。</p>
+
+    <!--
+        lang属性指定网页元素使用的语言。
+        lang属性的值，必须符合 BCP47 的标准。下面是一些常见的语言代码。
+            zh：中文
+            zh-Hans：简体中文
+            zh-Hant：繁体中文
+            en：英语
+            en-US：美国英语
+            en-GB：英国英语
+            es：西班牙语
+            fr：法语
+     -->
+    <p lang="en">hello</p>
+    <p lang="zh">你好</p>
+
+    <!--
+        dir属性表示文字的阅读方向，有三个可能的值。
+            ltr：从左到右阅读，比如英语。
+            rtl：从右到左阅读，阿拉伯语、波斯语、希伯来语都属于这一类。
+            auto：浏览器根据内容的解析结果，自行决定。
+     -->
+    <p dir="ltr">
+        123
+    </p>
+    <p dir="rtl">
+        123
+    </p>
+    <p dir="auto">
+        123
+    </p>
+
+    <!--
+        HTML 网页的内容默认是用户不能编辑，contenteditable属性允许用户修改内容。它有两个可能的值。
+            true或空字符串：内容可以编辑
+            false：不可以编辑
+     -->
+    <p contenteditable>
+        鼠标点击，本句内容可修改。
+    </p>
+
+    <!--
+        浏览器一般会自带拼写检查功能，编辑内容时，拼错的单词下面会显示红色的波浪线。spellcheck属性就表示，是否打开拼写检查。
+            它有两个可能的值。
+            true：打开拼写检查
+            false：关闭拼写检查
+     -->
+    <p contenteditable="true" spellcheck="true">
+        英语单词 separate 容易写错成 seperate。
+    </p>
+
+    <!--
+        自定义属性
+            data-
+     -->
+    <a href="#" class="tooltip" data-tip="this is the tip!">链接</a>
+    <p class="add" data-add="Add">add</p>
+</body>
+
+<style>
+    a[data-tip="this is the tip!"] {
+        color: red;
+    }
+    .add::after {
+        content: attr(data-add)
+    }
+</style>
+</html>
