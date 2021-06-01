@@ -1,0 +1,48 @@
+<!--
+    网页包含了大量的文字，浏览器必须知道这些文字的编码方法，才能把文字还原出来。
+    一般情况下，服务器向浏览器发送 HTML 网页文件时，会通过 HTTP 头信息，声明网页的编码方式。
+    Content-Type: text/html; charset=UTF-8
+
+    网页内部也会再用<meta>标签，再次声明网页的编码。
+    <metacharset="UTF-8">
+
+    网页可以使用不同语言的编码方式，但是最常用的编码是 UTF-8。UTF-8 编码是 Unicode 字符集的一种表达方式。这个字符集的设计目标是包含世界上的所有字符，目前已经收入了十多万个字符。
+    每个字符有一个 Unicode 号码，称为码点（code point）。如果知道码点，就能查到这是什么字符。举例来说，英文字母a的码点是十进制的97（十六进制的61），汉字“中”的码点是十进制的20013（十六进制的4e2d）。
+
+
+    数字表示法的不方便之处，在于必须知道每个字符的码点，很难记忆。为了能够快速输入，HTML 为一些特殊字符，规定了容易记忆的名字，允许通过名字来表示它们，这称为实体表示法（entity）。
+    实体的写法是&name;，其中的name是字符的名子。下面是其中一些特殊字符，及其对应的实体。
+        <：&lt;
+        >：&gt;
+        "：&quot;
+        '：&apos;
+        &：&amp;
+        ©：&copy;
+        #：&num;
+        §：&sect;
+        ¥：&yen;
+        $：&dollar;
+        £：&pound;
+        ¢：&cent;
+        %：&percnt;
+        *：$ast;
+        @：&commat;
+        ^：&Hat;
+        ±：&plusmn;
+        空格：&nbsp;
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="Type=text/html; charset=utf-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        1 &lt;
+    </div>
+</body>
+</html>
