@@ -1,0 +1,64 @@
+<!--
+    图片是网页组成的重要部分
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        src:图片路径 可以是网络地址 也可以是本地路径
+        alt: 图片不显示时，显示文本
+        width: 指定图片宽度
+        height: 指定图片高度
+        crossorigin:
+            anonymous 跨域请求不带有用户凭证 通常是cookie
+            use-credentials 跨域请求带用户凭证
+        loading:
+            auto 默认值 不使用loading属性
+            lazy: 启用懒加载
+            eager: 立即加载资源
+        referrerpolicy
+            <img>导致的图片加载的 HTTP 请求，默认会带有Referer的头信息。referrerpolicy属性对这个行为进行设置。
+        srcset
+            根据不同的密度显示对应的图片
+            https://segmentfault.com/a/1190000004254111
+        sizes
+            不同的屏幕宽度显示不同的图片，配合scrset使用
+     -->
+    <img
+        src="/img.png"
+        alt="加载失败"
+        width="200"
+        height="200"
+        crossorigin="anonymous"
+        loading="lazy"
+        srcset="
+            http://placehold.it/2000 2000w,
+            http://placehold.it/1500 1500w,
+            http://placehold.it/1000 1000w,
+            http://placehold.it/500 500w
+        "
+        sizes="
+            (max-width: 500px) 500px,
+            (max-width: 1000px) 1000px,
+            (max-width: 1500px) 1500px,
+            2000px
+        "
+    >
+
+    <!--
+        响应式用法
+        设备宽度如果不超过500px，就加载竖屏的图像，否则加载横屏的图像。
+     -->
+    <picture>
+        <source media="(max-width: 500px)" srcset="cat-vertical.jpg">
+        <source media="(min-width: 501px)" srcset="cat-horizontal.jpg">
+        <img src="cat.jpg" alt="cat">
+    </picture>
+</body>
+</html>
